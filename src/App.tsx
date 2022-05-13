@@ -5,6 +5,8 @@ function App() {
     return (
         <div>
             This is APP component
+            <Rating/>
+            <Accordion/>
         </div>
     );
 }
