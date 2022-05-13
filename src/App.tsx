@@ -4,7 +4,7 @@ import './App.css';
 function App() {
     return (
         <div>
-            This is APP component
+            <AppTitle/>
             <Rating/>
             <Accordion/>
         </div>
@@ -35,8 +35,13 @@ function Accordion() {
         </div>
     )
 }
+
 function Star() {
     return <div>star</div>
+}
+
+function AppTitle() {
+    return <>This is APP component</>
 }
 
 export default App;
