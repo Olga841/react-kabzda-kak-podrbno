@@ -3,11 +3,14 @@ import './App.css';
 import {Accordion} from "./Accordion";
 import {Rating} from "./Rating";
 
+type AppTitlePropsType = {
+    title: string
+}
 function App() {
     console.log('App rendering...')
     return (
         <div>
-            <AppTitle/>
+            <AppTitle title={'This is APP component'}/>
             <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
@@ -19,9 +22,9 @@ function App() {
     );
 }
 
-function AppTitle() {
+function AppTitle(props: AppTitlePropsType) {
     console.log('AppTitle rendering...')
-    return <>This is APP component</>
+    return <h1>{props.title}</h1>
 }
 
 export default App;
