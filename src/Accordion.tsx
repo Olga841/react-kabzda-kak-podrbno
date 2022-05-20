@@ -15,13 +15,13 @@ export function Accordion(props: AccordionPropsType) {
         return (
             <div>
                 <AccordionTitle title={props.title}/>
-                <AccordionBody/>
             </div>
         )
     } else {
         return (
             <div>
                 <AccordionTitle title={props.title}/>
+                <AccordionBody/>
             </div>
         )
     }
