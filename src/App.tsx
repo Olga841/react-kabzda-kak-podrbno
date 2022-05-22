@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.module.css';
 import {Accordion} from "./Accordion";
 import {Rating} from "./Rating";
 import {OnOff} from "./OnOff";
@@ -20,7 +20,7 @@ function App() {
             <Rating value={5}/>
             <Accordion title={'Accordion1'} collapsed={true}/>
             <Accordion title={'Accordion2'} collapsed={false}/>
-            <OnOff/>
+            <OnOff on={true}/>
         </div>
     );
 }
