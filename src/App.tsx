@@ -20,7 +20,7 @@ function App() {
             <Rating value={5}/>
             <Accordion title={'Accordion1'} collapsed={true}/>
             <Accordion title={'Accordion2'} collapsed={false}/>
-            <OnOff on={true}/>
+            <OnOff />
         </div>
     );
 }
