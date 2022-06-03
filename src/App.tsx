@@ -13,11 +13,11 @@ function App() {
         <div>
             <AppTitle title={'This is APP component'}/>
             <Rating value={0}/>
-            <Rating value={1}/>
+            {/*<Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
             <Rating value={4}/>
-            <Rating value={5}/>
+            <Rating value={5}/>*/}
             <Accordion title={'Accordion1'} />
             <Accordion title={'Accordion2'} />
             <OnOff />

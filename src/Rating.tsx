@@ -8,11 +8,11 @@ export function Rating(props: RatingPropsType) {
     console.log('Rating rendering...')
     return (
         <div>
-            <Star selected={props.value > 1}/>
-            <Star selected={props.value > 2}/>
-            <Star selected={props.value > 3}/>
-            <Star selected={props.value > 4}/>
-            <Star selected={props.value > 5}/>
+            <Star selected={props.value > 1}/><button>1</button>
+            <Star selected={props.value > 2}/><button>2</button>
+            <Star selected={props.value > 3}/><button>3</button>
+            <Star selected={props.value > 4}/><button>4</button>
+            <Star selected={props.value > 5}/><button>5</button>
         </div>
     )
 }
@@ -23,9 +23,9 @@ type StarPropsType = {
 
 function Star(props: StarPropsType) {
     if (props.selected) {
-        return <span><b>star </b></span>
+        return <span><b> star </b></span>
     } else {
-        return <span>star </span>
+        return <span> star </span>
     }
 
 }
