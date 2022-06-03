@@ -15,7 +15,7 @@ export function Accordion(props: AccordionPropsType) {
     return (
         <div>
             <AccordionTitle title={props.title}/>
-            <button>TOGGLE</button>
+            <button onClick={() => setCollapsed(!collapsed)}>TOGGLE</button>
             {collapsed && <AccordionBody/>}
         </div>
     )
