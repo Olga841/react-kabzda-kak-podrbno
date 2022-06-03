@@ -1,20 +1,13 @@
 import React, {useState} from "react";
 
-
-type OnOffPropsType = {
-
-}
-
-
-
-export function OnOff(props: OnOffPropsType) {
-    const[on, setOn] = useState(false)
+export function OnOff() {
+    const [on, setOn] = useState(false)
     const onStyles = {
         width: '30px',
         height: '30px',
         border: '2px solid black',
         marginLeft: '5px',
-        background: on? 'green' : 'white',
+        background: on ? 'green' : 'white',
         display: 'inline-block'
     }
     const offStyles = {
@@ -22,7 +15,7 @@ export function OnOff(props: OnOffPropsType) {
         height: '30px',
         border: '2px solid black',
         marginLeft: '5px',
-        background: on? 'white' : 'red',
+        background: on ? 'white' : 'red',
         display: 'inline-block'
     }
     const indicatorStyles = {
@@ -31,7 +24,7 @@ export function OnOff(props: OnOffPropsType) {
         borderRadius: '30px',
         border: '2px solid black',
         marginLeft: '5px',
-        background: on? 'green' : 'red',
+        background: on ? 'green' : 'red',
         display: 'inline-block'
     }
 
