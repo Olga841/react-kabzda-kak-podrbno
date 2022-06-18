@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.module.css';
+import s from'./App.module.css';
 import {Accordion} from "./Accordion";
 import {Rating} from "./Rating";
 import {OnOff} from "./OnOff";
@@ -10,9 +10,9 @@ type AppTitlePropsType = {
 function App() {
     console.log('App rendering...')
     return (
-        <div>
+        <div className={s.app}>
             <AppTitle title={'This is APP component'}/>
-            <Rating value={0}/>
+            <Rating/>
             {/*<Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
