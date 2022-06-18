@@ -6,30 +6,20 @@ export function Rating() {
     console.log('Rating rendering...')
     return (
         <div>
-            <Star />
-
-            <Star />
-
-            <Star />
-
-            <Star />
-
-            <Star />
-
+            <Star selected={value > 0} setValue={setValue}/>
+            <Star selected={value > 0} setValue={setValue}/>
+            <Star selected={value > 0} setValue={setValue}/>
+            <Star selected={value > 0} setValue={setValue}/>
+            <Star selected={value > 0} setValue={setValue}/>
         </div>
     )
 }
 
+type StarPropsType = {
+    setValue: (value: 1 | 2 | 3 | 4 |5) => void
+    selected: boolean
+}
 
-function Star() {
-    const [selected, setSelected] = useState(true)
-
-    return (
-        <span onClick={() => {setSelected(!selected)}}>{selected ? <b> star </b> : ' star '}</span>)
-    /*if (props.selected) {
-        return <span><b> star </b></span>
-    } else {
-        return <span> star </span>
-    }*/
-
+function Star(props: StarPropsType) {
+    return <span onClick={() => {props.setValue(5)}}>{props.selected ? <b> star </b> : ' star '}</span>
 }
