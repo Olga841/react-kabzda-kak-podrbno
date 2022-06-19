@@ -1,5 +1,11 @@
 import React, {useState} from "react";
 
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+type StarPropsType = {
+    value: RatingValueType
+    setValue: (value: RatingValueType) => void
+    selected: boolean
+}
 
 export function Rating() {
     const [value, setValue] = useState(0)
@@ -15,12 +21,8 @@ export function Rating() {
     )
 }
 
-type StarPropsType = {
-    value: 1 | 2 | 3 | 4 | 5
-    setValue: (value: 1 | 2 | 3 | 4 |5) => void
-    selected: boolean
-}
-
 function Star(props: StarPropsType) {
-    return <span onClick={() => {props.setValue(props.value)}}>{props.selected ? <b> star </b> : ' star '}</span>
+    return <span onClick={() => {
+        props.setValue(props.value)
+    }}>{props.selected ? <b> star </b> : ' star '}</span>
 }

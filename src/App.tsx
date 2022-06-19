@@ -1,23 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from'./App.module.css';
 import {Accordion} from "./Accordion";
-import {Rating} from "./Rating";
+import {Rating, RatingValueType} from "./Rating";
 import {OnOff} from "./OnOff";
 
 type AppTitlePropsType = {
     title: string
 }
+
 function App() {
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     console.log('App rendering...')
     return (
         <div className={s.app}>
             <AppTitle title={'This is APP component'}/>
             <Rating/>
-            {/*<Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>*/}
             <Accordion title={'Accordion1'} />
             <Accordion title={'Accordion2'} />
             <OnOff />
