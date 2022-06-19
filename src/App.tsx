@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import s from'./App.module.css';
 import {Accordion} from "./Accordion";
-import {Rating, RatingValueType} from "./Rating";
+import {UncontrolledRating, RatingValueType} from "./UncontrolledRating";
 import {OnOff} from "./OnOff";
+import {Rating} from "./Rating";
 
 type AppTitlePropsType = {
     title: string
@@ -14,7 +15,8 @@ function App() {
     return (
         <div className={s.app}>
             <AppTitle title={'This is APP component'}/>
-            <Rating/>
+            <UncontrolledRating />
+            <Rating value={2}/>
             <Accordion title={'Accordion1'} />
             <Accordion title={'Accordion2'} />
             <OnOff />
