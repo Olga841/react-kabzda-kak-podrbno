@@ -16,7 +16,7 @@ function App() {
         <div className={s.app}>
             <AppTitle title={'This is APP component'}/>
             <UncontrolledRating />
-            <Rating value={2}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
             <Accordion title={'Accordion1'} />
             <Accordion title={'Accordion2'} />
             <OnOff />
