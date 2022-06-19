@@ -4,6 +4,7 @@ import {Accordion} from "./Accordion";
 import {UncontrolledRating, RatingValueType} from "./UncontrolledRating";
 import {OnOff} from "./OnOff";
 import {Rating} from "./Rating";
+import {ControlledAccordion} from "./ControlledAccordion";
 
 type AppTitlePropsType = {
     title: string
@@ -11,6 +12,7 @@ type AppTitlePropsType = {
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    const [collapsed, setCollapsed] = useState<boolean>(false)
     console.log('App rendering...')
     return (
         <div className={s.app}>
@@ -18,7 +20,7 @@ function App() {
             <UncontrolledRating />
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <Accordion title={'Accordion1'} />
-            <Accordion title={'Accordion2'} />
+            <ControlledAccordion title={'Accordion2'} collapsed={collapsed} onClick={setCollapsed}/>
             <OnOff />
         </div>
     );
