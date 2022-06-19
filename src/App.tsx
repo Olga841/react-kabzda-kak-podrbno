@@ -5,6 +5,7 @@ import {UncontrolledRating, RatingValueType} from "./UncontrolledRating";
 import {OnOff} from "./OnOff";
 import {Rating} from "./Rating";
 import {ControlledAccordion} from "./ControlledAccordion";
+import {UncontrolledOnOff} from "./UncontrolledOnOff";
 
 type AppTitlePropsType = {
     title: string
@@ -13,6 +14,7 @@ type AppTitlePropsType = {
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [collapsed, setCollapsed] = useState<boolean>(false)
+    const [on, setOn] = useState(false)
     console.log('App rendering...')
     return (
         <div className={s.app}>
@@ -22,6 +24,7 @@ function App() {
             <Accordion title={'Accordion1'} />
             <ControlledAccordion title={'Accordion2'} collapsed={collapsed} onClick={setCollapsed}/>
             <OnOff />
+            <UncontrolledOnOff on={on} onClick={setOn}/>
         </div>
     );
 }
