@@ -38,6 +38,7 @@ export function UncontrolledOnOff(props: UncontrolledOnOffPropsType) {
             <div onClick={() => props.onClick(!props.on)} style={onStyles}>On</div>
             <div onClick={() => props.onClick(!props.on)} style={offStyles}>Off</div>
             <div style={indicatorStyles}></div>
+            <input/>
         </>
     )
 }
