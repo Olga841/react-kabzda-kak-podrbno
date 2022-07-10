@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ChangeEvent, useState} from "react";
 
 type UncontrolledOnOffPropsType = {
     on: boolean
@@ -33,12 +33,22 @@ export function UncontrolledOnOff(props: UncontrolledOnOffPropsType) {
         display: 'inline-block'
     }
 
+    const [value, setValue] = useState<string>('')
+
+    function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
+        setValue(e.currentTarget.value)
+    }
+    function onClickHandler () {
+
+    }
+
+
     return (
         <>
             <div onClick={() => props.onClick(!props.on)} style={onStyles}>On</div>
             <div onClick={() => props.onClick(!props.on)} style={offStyles}>Off</div>
             <div style={indicatorStyles}></div>
-            <input/>
+            <input onChange={onChangeHandler}/> - {value}<button onClick={onClickHandler}>Send</button>
         </>
     )
 }
