@@ -36,13 +36,18 @@ export function UncontrolledOnOff(props: UncontrolledOnOffPropsType) {
     const [value, setValue] = useState< string >('')
     const [parentValue, setParentValue] = useState< string >('')
     const elem = useRef<HTMLInputElement>(null)
-
+    const [checked, setChecked] = useState<boolean>(true)
     function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
         setParentValue(e.currentTarget.value)
     }
 
     function onClickHandler () {
     setValue(elem.current?.value || '')
+    }
+
+    function onChangeChecked(e: ChangeEvent<HTMLInputElement>) {
+        setChecked(e.currentTarget.checked)
+        console.log(checked)
     }
 
 
@@ -53,6 +58,8 @@ export function UncontrolledOnOff(props: UncontrolledOnOffPropsType) {
             <div style={indicatorStyles}></div>
             <input ref={elem}/> - {value}<button onClick={onClickHandler}>Send</button>
             <input value={parentValue} onChange={onChangeHandler}/> -{parentValue}
+
+            <input type={"checkbox"} checked={checked} onChange={onChangeChecked}/>
         </>
     )
 }
