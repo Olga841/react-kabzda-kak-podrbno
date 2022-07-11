@@ -36,7 +36,8 @@ export function UncontrolledOnOff(props: UncontrolledOnOffPropsType) {
     const [value, setValue] = useState< string >('')
     const [parentValue, setParentValue] = useState< string >('')
     const elem = useRef<HTMLInputElement>(null)
-    const [checked, setChecked] = useState<boolean>(true)
+    const [checked, setChecked] = useState<boolean>(false)
+    const [select, setSelect] = useState<string>('')
     function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
         setParentValue(e.currentTarget.value)
     }
@@ -49,17 +50,28 @@ export function UncontrolledOnOff(props: UncontrolledOnOffPropsType) {
         setChecked(e.currentTarget.checked)
         console.log(checked)
     }
+    function onChangeSelect(e: ChangeEvent<HTMLSelectElement>) {
+        console.log(select)
+        setSelect(e.currentTarget.value)
+        console.log(select)
+    }
 
 
     return (
         <>
             <div onClick={() => props.onClick(!props.on)} style={onStyles}>On</div>
             <div onClick={() => props.onClick(!props.on)} style={offStyles}>Off</div>
-            <div style={indicatorStyles}></div>
+            <div style={indicatorStyles}>o</div>
             <input ref={elem}/> - {value}<button onClick={onClickHandler}>Send</button>
             <input value={parentValue} onChange={onChangeHandler}/> -{parentValue}
 
             <input type={"checkbox"} checked={checked} onChange={onChangeChecked}/>
+
+            <select value={select} onChange={onChangeSelect}>
+                <option value={'1'}>Minsk</option>
+                <option value={'2'}>Moscow</option>
+                <option value={'3'}>Kiev</option>
+            </select>
         </>
     )
 }
