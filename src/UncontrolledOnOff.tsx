@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {ChangeEvent, useRef, useState} from "react";
 
 type UncontrolledOnOffPropsType = {
     on: boolean
@@ -34,11 +34,12 @@ export function UncontrolledOnOff(props: UncontrolledOnOffPropsType) {
     }
 
     const [value, setValue] = useState< string >('')
+    const [parentValue, setParentValue] = useState< string >('')
     const elem = useRef<HTMLInputElement>(null)
 
-    // function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
-    //     setValue(e.currentTarget.value)
-    // }
+    function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
+        setParentValue(e.currentTarget.value)
+    }
 
     function onClickHandler () {
     setValue(elem.current?.value || '')
@@ -51,6 +52,7 @@ export function UncontrolledOnOff(props: UncontrolledOnOffPropsType) {
             <div onClick={() => props.onClick(!props.on)} style={offStyles}>Off</div>
             <div style={indicatorStyles}></div>
             <input ref={elem}/> - {value}<button onClick={onClickHandler}>Send</button>
+            <input value={parentValue} onChange={onChangeHandler}/> -{parentValue}
         </>
     )
 }
