@@ -10,6 +10,8 @@ type AppTitlePropsType = {
     title: string
 }
 
+const names = [{name: 'Dmitry', id: '1'}, {name: 'Vova', id: '2'}, {name: 'Pasha', id: '3'}, {name: 'Valera', id: '4'}]
+
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [collapsed, setCollapsed] = useState<boolean>(false)
@@ -20,7 +22,7 @@ function App() {
             <AppTitle title={'This is APP component'}/>
             <UncontrolledRating />
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Accordion title={'Accordion1'} />
+            <Accordion title={'Accordion1'} items={names} onClickName={() => console.log(`wants to change`)}/>
             <ControlledAccordion title={'Accordion2'} collapsed={collapsed} onClick={setCollapsed}/>
 
             <UncontrolledOnOff on={on} onClick={setOn}/>
